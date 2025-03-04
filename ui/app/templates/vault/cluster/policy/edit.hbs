@@ -38,6 +38,14 @@
         />
         <div class="toolbar-separator"></div>
       {{/if}}
+      <Hds::Button
+        data-test-download-button
+        @icon={{if @hideIcon "" "rocket"}}
+        @text={{or @text "Test policy"}}
+        class="toolbar-button"
+        {{on "click" (action this.testPolicy)}}
+      />
+      <div class="toolbar-separator"></div>
       <ToolbarLink @route="vault.cluster.policy.show" @model={{this.model.id}} data-test-policy-edit-toggle>
         Back to policy
       </ToolbarLink>

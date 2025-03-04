@@ -25,4 +25,13 @@ export default class PolicyEditController extends Controller {
       this.flashMessages.danger(message);
     }
   }
+
+  @action
+  async testPolicy() {
+    try {
+      this.flashMessages.success('Test.');
+    } catch (error) {
+      this.flashMessages.danger('Cannot create token to test policy.');
+    }
+  }
 }
